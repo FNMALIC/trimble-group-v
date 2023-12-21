@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<opencv_storage>
+    <cascade>
+        <stageType>BOOST</stageType>
+        <featureType>HAAR</featureType>
+        <height>24</height>
+        <width>24</width>
+        <stageParams>
+            <boostType>GAB</boostType>
+            <minHitRate>0.995</minHitRate>
+            <maxFalseAlarm>0.5</maxFalseAlarm>
+            <weightTrimRate>0.95</weightTrimRate>
+            <maxDepth>1</maxDepth>
+        </stageParams>
+        <featureParams>
+            <maxCatCount>0</maxCatCount>
+        </featureParams>
+        <stageNum>25</stageNum>
+        <stages>
+            <!-- Placeholder for multiple stages containing classifiers -->
+            <_>
+                <maxWeakCount>3</maxWeakCount>
+                <stageThreshold>-0.5</stageThreshold>
+                <weakClassifiers>
+                    <!-- Placeholder for weak classifiers -->
+                    <_>
+                        <internalNodes>-1 0 -1 19 1 2</internalNodes>
+                        <leafValues>0.5 -0.5</leafValues>
+                    </_>
+                    <!-- More weak classifiers -->
+                </weakClassifiers>
+            </_>
+            <!-- More stages -->
+        </stages>
+    </cascade>
+</opencv_storage>
