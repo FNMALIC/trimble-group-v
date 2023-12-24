@@ -169,6 +169,29 @@ class CanvasComponent:
         else:
             return "Custom Size"
         
+    def test(points):
+        # Create a blank canvas
+        canvas = np.ones((500, 500, 3), dtype=np.uint8) * 255  # 500x500 canvas with a white background
+
+        # Convert the points to a numpy array
+        pts = np.array(points, np.int32)
+        pts = pts.reshape((-1, 1, 2))
+
+        # Draw a polyline on the canvas using OpenCV
+        cv2.polylines(canvas, [pts], isClosed=True, color=(0, 0, 0), thickness=2)
+
+        # Convert the canvas to a format compatible with tkinter
+        img = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB)
+        img = Image.fromarray(img)
+        img = ImageTk.PhotoImage(img)
+
+        return img
+    
+    def resolve(self,points):
+        img = self.test(points)  # Call the test method passing the points
+        self.canvas.create_image(0, 0, anchor=tk.NW, image=img)
+        self.canvas.image = img 
+
     def create_negative(self):
         # print("test")
        if self.actions:
@@ -201,3 +224,5 @@ class CanvasComponent:
 
             except Exception as e:
                 print("Error:", e)
+
+        
